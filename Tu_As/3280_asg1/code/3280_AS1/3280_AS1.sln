@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual C++ Express 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Inverse", "3280_AS1\3280_AS1.vcxproj", "{99FC03DF-AE93-4F29-8279-A6494F1F0B0A}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Ascii", "Ascii\Ascii.vcxproj", "{170AB827-23F0-4371-8F88-7C4A121E2A6E}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "bonus", "bonus\bonus.vcxproj", "{138BD4C7-8A53-4A58-9978-FB408E6F8263}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{99FC03DF-AE93-4F29-8279-A6494F1F0B0A}.Debug|Win32.ActiveCfg = Debug|Win32
+		{99FC03DF-AE93-4F29-8279-A6494F1F0B0A}.Debug|Win32.Build.0 = Debug|Win32
+		{99FC03DF-AE93-4F29-8279-A6494F1F0B0A}.Release|Win32.ActiveCfg = Release|Win32
+		{99FC03DF-AE93-4F29-8279-A6494F1F0B0A}.Release|Win32.Build.0 = Release|Win32
+		{170AB827-23F0-4371-8F88-7C4A121E2A6E}.Debug|Win32.ActiveCfg = Debug|Win32
+		{170AB827-23F0-4371-8F88-7C4A121E2A6E}.Debug|Win32.Build.0 = Debug|Win32
+		{170AB827-23F0-4371-8F88-7C4A121E2A6E}.Release|Win32.ActiveCfg = Release|Win32
+		{170AB827-23F0-4371-8F88-7C4A121E2A6E}.Release|Win32.Build.0 = Release|Win32
+		{138BD4C7-8A53-4A58-9978-FB408E6F8263}.Debug|Win32.ActiveCfg = Debug|Win32
+		{138BD4C7-8A53-4A58-9978-FB408E6F8263}.Debug|Win32.Build.0 = Debug|Win32
+		{138BD4C7-8A53-4A58-9978-FB408E6F8263}.Release|Win32.ActiveCfg = Release|Win32
+		{138BD4C7-8A53-4A58-9978-FB408E6F8263}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
