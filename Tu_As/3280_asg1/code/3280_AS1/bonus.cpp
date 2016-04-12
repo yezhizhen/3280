@@ -14,12 +14,10 @@
 #include "memory.h"
 #include "math.h"
 #include "bmp.h"		//	Simple .bmp library
+
 #define MAX_SHADES 8
 
 
-//
-//	***** PUT ALL YOUR CODE INSIDE main() *****
-//
 int main( int argc, char** argv)
 {
 
@@ -35,12 +33,14 @@ int main( int argc, char** argv)
 
 	//	Prepare output TXT file ( command line: argv[2] )
 	//
-	FILE *fout = fopen( argv[2], "w" );
-	fprintf( fout, "%d %d", w, h );
-	fprintf( fout, "\n", w, h);
+	FILE *html = fopen( "bonus.html", "w" );
+    
+	fprintf( html, "<!DOCTYPE html>\n <head></head>\n <body>\n<p>");
+
 	unsigned char r, g, b;
 	unsigned char gray;
-    int denominator = 256/MAX_SHADES;
+	char temp;
+	//indicate if <font..> has not been closed
 	//
 	//	Your code goes here ....
 	//	
@@ -53,22 +53,30 @@ int main( int argc, char** argv)
 		for(int col = 0; col<w;col++)
 		{
 			myBmp.getColor(col, row, r, g, b);
-			gray = 0.299 * r + 0.587 * g + 0.114 * b ;
-            //don't forget rounding!
-            int up = ceil(gray / (denominator*1.0));
-            int down = floor(gray/(denominator*1.0));
-            int index = abs(gray-up)> abs(gray-down) ? down : up;
+			gray = 0.299 * r + 0.587 * g + 0.114 * b;
             //now, quantize gray
-			fputc(shades[index],fout);
+			temp = shades[gray/16];
+			//if not black, use the font
+			if(!(r < 10 &&  b < 10 && g<10))
+			{
+				fprintf(html,"<font color=\"rgb(%u,%u,%u)\">%c", r,g,b,temp);
+			}
+			else
+			{
+				if(temp!=' ')
+					fprintf(html,"%c",temp);
+				else
+					fprintf(html,"&nbsp;");
+			}
 		}
-        //newline unless the lass one
-		if (row != h-1)
-			fputc('\n', fout);
+		//now, at the end of an line.
+		fprintf(html,"<br/>\n");
 	}
 
-	
-	//	close ASCII file
-	fclose(fout);
+	fprintf(html,"</div>\n</body>");
+
+	//	close html file
+	fclose(html);
 
 	return 0;
 
